@@ -9,5 +9,12 @@
 			configuration.EnableMetrics();
 			configuration.ExposeRawResponse();
 		}
+
+		internal static void ExcludeElasticsearchAssemblies()
+		{
+			MiniProfiler.Settings.ExcludeAssembly("Elasticsearch.Net");
+			MiniProfiler.Settings.ExcludeAssembly("Nest");
+			MiniProfiler.Settings.ExcludeAssembly(typeof(MiniProfilerElasticsearch).Assembly.GetName().Name);
+		}
 	}
 }
