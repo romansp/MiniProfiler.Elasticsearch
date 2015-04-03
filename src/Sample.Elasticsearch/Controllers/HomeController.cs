@@ -17,9 +17,9 @@
 		{
 			var node = new Uri("http://localhost:9200");
 			var connectionSettings = new ConnectionSettings(node, defaultIndex: "elasticsearch-sample");
-			_client = new ProfiledElasticClient(connectionSettings);
+			_client = new ProfiledElasticClient(connectionSettings, MiniProfiler.Current);
 		}
-		
+
 		public async Task<ActionResult> Index()
 		{
 			var person = new Person
@@ -37,13 +37,18 @@
 
 			using (MiniProfiler.StepStatic("Async"))
 			{
-				// timings not working 
 				await _client.IndexAsync(person);
-				await _client.IndexAsync(new List<Person> { person, person, person });
-				await _client.IndexManyAsync(new List<Person> { person, person, person });
-				await _client.GetAsync<Person>("1");
+				using (MiniProfiler.StepStatic("Async inner 1"))
+				{
+					await _client.IndexAsync(new List<Person> { person, person, person });
+				}
+				using (MiniProfiler.StepStatic("Async inner 2"))
+				{
+					await _client.IndexManyAsync(new List<Person> { person, person, person });
+					await _client.GetAsync<Person>("1");
+				}
 			}
-			
+
 			return View();
 		}
 
@@ -61,10 +66,12 @@
 			return View();
 		}
 
-		public ActionResult Ajax()
+		public async Task<JsonResult> Ajax()
 		{
-			var result = _client.Get<Person>("1");
-			return Json(result);
+			var result = _client.Get<Person>("1").Source;
+			// execute duplicate async
+			var resultAsync = (await _client.GetAsync<Person>("1")).Source;
+			return Json(new { result, resultAsync }, JsonRequestBehavior.AllowGet);
 		}
 	}
 }

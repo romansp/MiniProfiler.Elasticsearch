@@ -4,11 +4,12 @@
 
 	public class ProfiledElasticClient : ElasticClient
 	{
-		public ProfiledElasticClient(ConnectionSettings configuration) : base(configuration)
+		public ProfiledElasticClient(ConnectionSettings configuration, MiniProfiler profiler)
+			: base(configuration)
 		{
 			configuration.EnableMetrics();
 			configuration.ExposeRawResponse();
-			configuration.SetConnectionStatusHandler(MiniProfilerElasticsearch.HandleResponse);
+			configuration.SetConnectionStatusHandler(response => MiniProfilerElasticsearch.HandleResponse(response, profiler));
 		}
 	}
 }

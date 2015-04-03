@@ -8,12 +8,12 @@ namespace StackExchange.Profiling.Elasticsearch
 
 	public static class MiniProfilerElasticsearch
 	{
-		internal static void HandleResponse(IElasticsearchResponse response)
+		internal static void HandleResponse(IElasticsearchResponse response, MiniProfiler profiler)
 		{
-			if (MiniProfiler.Current == null || MiniProfiler.Current.Head == null || response.Metrics == null)
+			if (profiler == null|| response.Metrics == null)
 				return;
 
-			MiniProfiler.Current.Head.AddCustomTiming("elasticsearch", new CustomTiming(MiniProfiler.Current, BuildCommandString(response))
+			profiler.Head.AddCustomTiming("elasticsearch", new CustomTiming(profiler, BuildCommandString(response))
 			{
 				Id = Guid.NewGuid(),
 				DurationMilliseconds = response.Metrics.Requests.Sum(c => c.EllapsedMilliseconds),
