@@ -17,7 +17,7 @@
 		{
 			var node = new Uri("http://localhost:9200");
 			var connectionSettings = new ConnectionSettings(node, defaultIndex: "elasticsearch-sample");
-			_client = new ProfiledElasticClient(connectionSettings, MiniProfiler.Current);
+			_client = new ProfiledElasticClient(connectionSettings);
 		}
 
 		public async Task<ActionResult> Index()

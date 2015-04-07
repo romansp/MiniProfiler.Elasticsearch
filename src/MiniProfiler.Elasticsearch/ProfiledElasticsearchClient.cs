@@ -6,13 +6,14 @@
 
 	public class ProfiledElasticsearchClient : ElasticsearchClient
 	{
-		public ProfiledElasticsearchClient(ConnectionConfiguration configuration, MiniProfiler profiler) 
+		private readonly MiniProfiler _profiler = MiniProfiler.Current;
+
+		public ProfiledElasticsearchClient(ConnectionConfiguration configuration) 
 			: base(configuration)
 		{
 			ProfilerUtils.ExcludeElasticsearchAssemblies();
 			ProfilerUtils.ApplyConfigurationSettings(configuration);
-
-			configuration.SetConnectionStatusHandler(response => MiniProfilerElasticsearch.HandleResponse(response, profiler));
+			configuration.SetConnectionStatusHandler(response => MiniProfilerElasticsearch.HandleResponse(response, _profiler));
 		}
 	}
 }
