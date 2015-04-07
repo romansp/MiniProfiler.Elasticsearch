@@ -2,7 +2,7 @@
 {
 	using global::Elasticsearch.Net.Connection;
 
-	public static class ProfilerUtils
+	internal static class ProfilerUtils
 	{
 		internal static void ApplyConfigurationSettings<T>(ConnectionConfiguration<T> configuration) where T : ConnectionConfiguration<T>
 		{
