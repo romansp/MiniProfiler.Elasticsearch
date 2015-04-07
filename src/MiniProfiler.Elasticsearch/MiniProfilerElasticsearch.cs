@@ -10,7 +10,7 @@ namespace StackExchange.Profiling.Elasticsearch
 	{
 		internal static void HandleResponse(IElasticsearchResponse response, MiniProfiler profiler)
 		{
-			if (profiler == null|| response.Metrics == null)
+			if (profiler == null || profiler.Head == null || response.Metrics == null)
 				return;
 
 			profiler.Head.AddCustomTiming("elasticsearch", new CustomTiming(profiler, BuildCommandString(response))
