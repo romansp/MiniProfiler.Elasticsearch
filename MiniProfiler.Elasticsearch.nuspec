@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <metadata>
+        <id>MiniProfiler.Elasticsearch</id>
+        <version>3.1.1.140</version>
+        <title>MiniProfiler.Elasticsearch</title>
+        <authors>Roman Pavlov</authors>
+        <licenseUrl>https://github.com/romansp/MiniProfiler.Elasticsearch/blob/master/LICENSE.md</licenseUrl>
+        <projectUrl>https://github.com/romansp/MiniProfiler.Elasticsearch</projectUrl>
+        <requireLicenseAcceptance>false</requireLicenseAcceptance>
+        <description>Elasticsearch.Net &amp; NEST client for logging to MiniProfiler.</description>
+        <summary>Provides Elasticsearch.Net &amp; NEST clients with profiling to MiniProfiler feature.</summary>
+        <tags>profiler elasticsearch asp.net performance profiling timing</tags>
+        <dependencies>
+            <dependency id="MiniProfiler" version="3.1.1.140" />
+            <dependency id="NEST" version="1.4.3" />
+        </dependencies>
+    </metadata>
+    <files>
+        <file src="src\MiniProfiler.Elasticsearch\bin\Release\MiniProfiler.Elasticsearch.dll" target="lib\net45\MiniProfiler.Elasticsearch.dll" />
+        <file src="src\MiniProfiler.Elasticsearch\bin\Release\MiniProfiler.Elasticsearch.pdb" target="lib\net45\MiniProfiler.Elasticsearch.pdb" />
+        <file src="src\MiniProfiler.Elasticsearch\bin\Release\MiniProfiler.Elasticsearch.xml" target="lib\net45\MiniProfiler.Elasticsearch.xml" />
+    </files>
+</package>
