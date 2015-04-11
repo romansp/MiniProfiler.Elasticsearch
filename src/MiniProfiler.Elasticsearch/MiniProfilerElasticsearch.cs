@@ -9,7 +9,7 @@ namespace StackExchange.Profiling.Elasticsearch
     /// <summary>
     /// <see cref="IElasticsearchResponse"/> handler class.
     /// </summary>
-	public static class MiniProfilerElasticsearch
+	internal static class MiniProfilerElasticsearch
 	{
         /// <summary>
         /// Handles <see cref="IElasticsearchResponse"/> and pushes <see cref="CustomTiming"/> to current <see cref="MiniProfiler"/> session.
