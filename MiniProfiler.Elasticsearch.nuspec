@@ -8,8 +8,8 @@
         <licenseUrl>https://github.com/romansp/MiniProfiler.Elasticsearch/blob/master/LICENSE.md</licenseUrl>
         <projectUrl>https://github.com/romansp/MiniProfiler.Elasticsearch</projectUrl>
         <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>Elasticsearch.Net &amp; NEST client for logging to MiniProfiler.</description>
-        <summary>Provides Elasticsearch.Net &amp; NEST clients with profiling to MiniProfiler feature.</summary>
+        <description>Elasticsearch.Net and NEST client for logging to MiniProfiler.</description>
+        <summary>Provides Elasticsearch.Net and NEST with profiling to MiniProfiler feature.</summary>
         <tags>profiler elasticsearch asp.net performance profiling timing</tags>
         <dependencies>
             <dependency id="MiniProfiler" version="3.1.1.140" />
