@@ -39,6 +39,7 @@
 	<script>
 		$('#ajax').click(function() {
 			$.ajax('@Url.Action("Ajax")', {
+				cache: false,
 				data: {
 					message: "Hello ajax!"
 				}
