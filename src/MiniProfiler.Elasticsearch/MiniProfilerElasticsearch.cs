@@ -73,10 +73,14 @@ namespace StackExchange.Profiling.Elasticsearch
 
             if (response.Success == false)
             {
-                commandTextBuilder.AppendFormat("\nMessage:\n{0}", response.OriginalException.Message);
-                if (!String.IsNullOrWhiteSpace(response.OriginalException.StackTrace))
+                // check if response contains original exception
+                if (response.OriginalException != null)
                 {
-                    commandTextBuilder.AppendFormat("Stack trace:\n{0}", response.OriginalException.StackTrace);
+                    commandTextBuilder.AppendFormat("\nMessage:\n{0}", response.OriginalException.Message);
+                    if (!String.IsNullOrWhiteSpace(response.OriginalException.StackTrace))
+                    {
+                        commandTextBuilder.AppendFormat("Stack trace:\n{0}", response.OriginalException.StackTrace);
+                    }
                 }
             }
             
