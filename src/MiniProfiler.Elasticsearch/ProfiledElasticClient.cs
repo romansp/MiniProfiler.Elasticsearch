@@ -19,7 +19,7 @@
         {
             ProfilerUtils.ExcludeElasticsearchAssemblies();
             ProfilerUtils.ApplyConfigurationSettings(configuration);
-            configuration.SetConnectionStatusHandler(response => MiniProfilerElasticsearch.HandleResponse(response, _profiler));
+            configuration.OnRequestCompleted(apiCallDetails => MiniProfilerElasticsearch.HandleResponse(apiCallDetails, _profiler));
         }
     }
 }

@@ -16,7 +16,7 @@
         public HomeController()
         {
             var node = new Uri("http://localhost:9200");
-            var connectionSettings = new ConnectionSettings(node, defaultIndex: "elasticsearch-sample");
+            var connectionSettings = new ConnectionSettings(node).DefaultIndex("elasticsearch-sample");
             _client = new ProfiledElasticClient(connectionSettings);
         }
 

@@ -1,6 +1,6 @@
 ﻿namespace StackExchange.Profiling.Elasticsearch.Utils
 {
-    using global::Elasticsearch.Net.Connection;
+    using global::Elasticsearch.Net;
 
     internal static class ProfilerUtils
     {
@@ -11,8 +11,7 @@
         /// <param name="configuration"></param>
         internal static void ApplyConfigurationSettings<T>(ConnectionConfiguration<T> configuration) where T : ConnectionConfiguration<T>
         {
-            configuration.EnableMetrics();
-            configuration.ExposeRawResponse();
+            configuration.DisableDirectStreaming();
         }
 
         /// <summary>
