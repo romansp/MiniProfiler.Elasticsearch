@@ -2,7 +2,7 @@
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
     <metadata>
         <id>MiniProfiler.Elasticsearch</id>
-        <version>3.1.1.140</version>
+        <version>3.2</version>
         <title>MiniProfiler.Elasticsearch</title>
         <authors>Roman Pavlov</authors>
         <licenseUrl>https://github.com/romansp/MiniProfiler.Elasticsearch/blob/master/LICENSE.md</licenseUrl>
@@ -13,7 +13,7 @@
         <tags>profiler elasticsearch asp.net performance profiling timing</tags>
         <dependencies>
             <dependency id="MiniProfiler" version="3.1.1.140" />
-            <dependency id="NEST" version="1.4.3" />
+            <dependency id="NEST" version="[1.0,2.0)" />
         </dependencies>
     </metadata>
     <files>
