@@ -13,7 +13,7 @@ build:
   project: MiniProfiler.Elasticsearch.sln
   verbosity: minimal
 after_build:
-- cmd: nuget pack ./src/MiniProfiler.Elasticsearch/MiniProfiler.Elasticsearch.csproj -Properties "Configuration=%CONFIGURATION%;Platform=%PLATFORM%"  -Verbosity Detailed
+- cmd: nuget pack .\src\MiniProfiler.Elasticsearch\MiniProfiler.Elasticsearch.csproj -BasePath "%APPVEYOR_BUILD_FOLDER%\src\MiniProfiler.Elasticsearch" -Properties "Configuration=%CONFIGURATION%;Platform=%PLATFORM%" -Verbosity Detailed
 artifacts:
 - path: '*.nupkg'
   name: nuget
