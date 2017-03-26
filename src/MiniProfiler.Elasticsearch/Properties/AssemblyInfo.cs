@@ -3,9 +3,9 @@ using System.Reflection;
 using System.Runtime.InteropServices;
 
 [assembly: AssemblyTitle("MiniProfiler.Elasticsearch")]
-[assembly: AssemblyDescription("Elasticsearch extensions for StackExchange.Profiling - http://miniprofiler.com")]
+[assembly: AssemblyDescription("Elasticsearch.Net and NEST client for logging to MiniProfiler.")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("romansp")]
+[assembly: AssemblyCompany("Roman Pavlov")]
 [assembly: AssemblyProduct("StackExchange.Profiling.Elasticsearch")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]

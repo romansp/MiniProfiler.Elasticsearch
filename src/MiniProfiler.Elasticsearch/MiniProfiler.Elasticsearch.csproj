@@ -57,6 +57,7 @@
     <Compile Include="Utils\ProfilerUtils.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="MiniProfiler.Elasticsearch.nuspec" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
