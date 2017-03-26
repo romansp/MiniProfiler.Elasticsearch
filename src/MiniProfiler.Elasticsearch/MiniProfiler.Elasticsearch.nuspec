@@ -16,4 +16,9 @@
             <dependency id="NEST" version="[5,6)" />
         </dependencies>
     </metadata>
+  <files>
+      <file src="bin\$configuration$\$id$.dll" target="lib\net45\$id$.dll" />
+      <file src="bin\$configuration$\$id$.pdb" target="lib\net45\$id$.pdb" />
+      <file src="bin\$configuration$\$id$.xml" target="lib\net45\$id$.xml" />
+  </files>
 </package>
