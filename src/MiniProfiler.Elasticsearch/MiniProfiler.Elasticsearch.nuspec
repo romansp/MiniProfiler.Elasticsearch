@@ -1,24 +1,24 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
-    <metadata>
-        <id>$id$</id>
-        <version>$version$</version>
-        <title>$title$</title>
-        <authors>$author$</authors>
-        <licenseUrl>https://github.com/romansp/MiniProfiler.Elasticsearch/blob/master/LICENSE.md</licenseUrl>
-        <projectUrl>https://github.com/romansp/MiniProfiler.Elasticsearch</projectUrl>
-        <requireLicenseAcceptance>false</requireLicenseAcceptance>
-        <description>$description$</description>
-        <summary>Provides Elasticsearch.Net and NEST with profiling to MiniProfiler feature.</summary>
-        <tags>profiler elasticsearch asp.net performance profiling timing</tags>
-        <dependencies>
-            <dependency id="MiniProfiler" version="3.1.1.140" />
-            <dependency id="NEST" version="[5,6)" />
-        </dependencies>
-    </metadata>
+  <metadata>
+    <id>MiniProfiler.Elasticsearch</id>
+    <version>5.0</version>
+    <title>MiniProfiler.Elasticsearch</title>
+    <authors>Roman Pavlov</authors>
+    <licenseUrl>https://github.com/romansp/MiniProfiler.Elasticsearch/blob/master/LICENSE.md</licenseUrl>
+    <projectUrl>https://github.com/romansp/MiniProfiler.Elasticsearch</projectUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Elasticsearch.Net and NEST client for logging to MiniProfiler.</description>
+    <summary>Provides Elasticsearch.Net and NEST with profiling to MiniProfiler feature.</summary>
+    <tags>profiler elasticsearch asp.net performance profiling timing</tags>
+    <dependencies>
+      <dependency id="MiniProfiler" version="3.1.1.140" />
+      <dependency id="NEST" version="[5,6)" />
+    </dependencies>
+  </metadata>
   <files>
-      <file src="bin\$configuration$\$id$.dll" target="lib\net45\$id$.dll" />
-      <file src="bin\$configuration$\$id$.pdb" target="lib\net45\$id$.pdb" />
-      <file src="bin\$configuration$\$id$.xml" target="lib\net45\$id$.xml" />
+    <file src="bin\Release\MiniProfiler.Elasticsearch.dll" target="lib\net45\MiniProfiler.Elasticsearch.dll" />
+    <file src="bin\Release\MiniProfiler.Elasticsearch.pdb" target="lib\net45\MiniProfiler.Elasticsearch.pdb" />
+    <file src="bin\Release\MiniProfiler.Elasticsearch.xml" target="lib\net45\MiniProfiler.Elasticsearch.xml" />
   </files>
 </package>
