@@ -4,7 +4,7 @@
     using System.Collections.Generic;
     using System.Threading.Tasks;
     using System.Web.Mvc;
-    using Models;
+        using Models;
     using Nest;
     using StackExchange.Profiling;
     using StackExchange.Profiling.Elasticsearch;

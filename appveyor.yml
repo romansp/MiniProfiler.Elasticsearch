@@ -8,12 +8,12 @@ init:
 nuget:
   disable_publish_on_pr: true
 before_build:
-- cmd: nuget restore ./src
+- cmd: nuget restore
 build:
-  project: src/MiniProfiler.Elasticsearch.sln
+  project: MiniProfiler.Elasticsearch.sln
   verbosity: minimal
 after_build:
-- cmd: nuget pack MiniProfiler.Elasticsearch.nuspec
+- cmd: nuget pack ./build/MiniProfiler.Elasticsearch.nuspec
 artifacts:
 - path: '*.nupkg'
   name: nuget
