@@ -13,7 +13,7 @@ build:
   project: MiniProfiler.Elasticsearch.sln
   verbosity: minimal
 after_build:
-- cmd: nuget pack ./src/MiniProfiler.Elasticsearch/MiniProfiler.Elasticsearch.csproj -Prop Configuration=%CONFIGURATION%
+- cmd: nuget pack ./src/MiniProfiler.Elasticsearch/MiniProfiler.Elasticsearch.csproj -Prop Configuration=$env:CONFIGURATION
 artifacts:
 - path: '*.nupkg'
   name: nuget
