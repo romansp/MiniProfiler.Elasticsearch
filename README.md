@@ -1,5 +1,9 @@
 # MiniProfiler.Elasticsearch
-[Elasticsearch.Net and NEST](https://github.com/elastic/elasticsearch-net) client for logging to [MiniProfiler](https://github.com/MiniProfiler/dotnet).
+Put your [Elasticsearch.Net and NEST](https://github.com/elastic/elasticsearch-net) requests timings directly into [MiniProfiler](https://github.com/MiniProfiler/dotnet).
+
+![profiler-popup](https://user-images.githubusercontent.com/3474842/30780873-de83efd8-a11d-11e7-8735-49dea4a1d4f1.png)
+![profiler-queries](https://user-images.githubusercontent.com/3474842/30780952-edf8adea-a11e-11e7-8d64-c65331f389bf.png)
+
 ## Install
 Run the following command in the Package Manager Console (NuGet).
 ```bash
@@ -13,6 +17,6 @@ PM> Install-Package MiniProfiler.Elasticsearch
 | `5.x` | `5.x` | `3.x` | [![Build status](https://ci.appveyor.com/api/projects/status/y6k4dia1iamrki8m/branch/master?svg=true)](https://ci.appveyor.com/project/romansp/miniprofiler-elasticsearch/branch/master) | [![Nuget feed](https://img.shields.io/nuget/vpre/MiniProfiler.Elasticsearch.svg)](https://www.nuget.org/packages/MiniProfiler.Elasticsearch)
 
 ## Usage
-Replace ``ElasticClient`` or ``ElasticsearchClient`` usages with their profiled version: ``ProfiledElasticClient`` or ``ProfiledElasticsearchClient``.
+Update usages of ``ElasticClient`` or ``ElasticsearchClient`` with their respected profiled version ``ProfiledElasticClient`` or ``ProfiledElasticsearchClient``.
 
-See **Sample.Elasticsearch** project for working example.
+Reference [Sample.Elasticsearch](https://github.com/romansp/MiniProfiler.Elasticsearch/tree/master/samples/Sample.Elasticsearch) for working example.
