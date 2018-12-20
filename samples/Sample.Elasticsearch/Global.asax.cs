@@ -28,15 +28,20 @@
             {
                 ViewEngines.Engines.Add(new ProfilingViewEngine(item));
             }
+
+            MiniProfiler.Configure(new MiniProfilerOptions
+            {
+                RouteBasePath = "~/mini-profiler-resources"
+            });
         }
 
         protected void Application_BeginRequest()
         {
-            MiniProfiler.Start();
+            MiniProfiler.StartNew();
         }
         protected void Application_EndRequest()
         {
-            MiniProfiler.Stop();
+            MiniProfiler.Current?.Stop();
         }
     }
 }

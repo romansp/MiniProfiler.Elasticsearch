@@ -19,9 +19,9 @@
         /// </summary>
         internal static void ExcludeElasticsearchAssemblies()
         {
-            MiniProfiler.Settings.ExcludeAssembly("Elasticsearch.Net");
-            MiniProfiler.Settings.ExcludeAssembly("Nest");
-            MiniProfiler.Settings.ExcludeAssembly(typeof(MiniProfilerElasticsearch).Assembly.GetName().Name);
+            MiniProfiler.DefaultOptions.ExcludeAssembly("Elasticsearch.Net");
+            MiniProfiler.DefaultOptions.ExcludeAssembly("Nest");
+            MiniProfiler.DefaultOptions.ExcludeAssembly(typeof(MiniProfilerElasticsearch).Assembly.GetName().Name);
         }
     }
 }
