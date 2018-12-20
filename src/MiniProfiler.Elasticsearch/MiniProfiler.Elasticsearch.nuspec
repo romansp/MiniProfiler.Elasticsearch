@@ -17,8 +17,8 @@
     </dependencies>
   </metadata>
   <files>
-    <file src="bin\Release\MiniProfiler.Elasticsearch.dll" target="lib\net461\MiniProfiler.Elasticsearch.dll" />
-    <file src="bin\Release\MiniProfiler.Elasticsearch.pdb" target="lib\net461\MiniProfiler.Elasticsearch.pdb" />
-    <file src="bin\Release\MiniProfiler.Elasticsearch.xml" target="lib\net461\MiniProfiler.Elasticsearch.xml" />
+    <file src="bin\Release\net461\MiniProfiler.Elasticsearch.dll" target="lib\net461\MiniProfiler.Elasticsearch.dll" />
+    <file src="bin\Release\net461\MiniProfiler.Elasticsearch.pdb" target="lib\net461\MiniProfiler.Elasticsearch.pdb" />
+    <file src="bin\Release\net461\MiniProfiler.Elasticsearch.xml" target="lib\net461\MiniProfiler.Elasticsearch.xml" />
   </files>
 </package>
