@@ -15,7 +15,6 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "global", "global", "{8991B3
 		src\Directory.build.props = src\Directory.build.props
 		LICENSE.md = LICENSE.md
 		README.md = README.md
-		version.json = version.json
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{16FF3561-A014-426A-8B77-4F3AF9F7E1A3}"
