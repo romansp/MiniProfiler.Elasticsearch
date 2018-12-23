@@ -1,21 +1,21 @@
-version: 1.0.{build}
-skip_branch_with_pr: true
 image: Visual Studio 2017
+version: '{build}'
+pull_requests:
+  do_not_increment_build_number: true
 configuration: Release
 platform: Any CPU
 init:
 - cmd: git config --global core.autocrlf true
 nuget:
   disable_publish_on_pr: true
-before_build:
-- cmd: nuget restore
 build:
   project: MiniProfiler.Elasticsearch.sln
   verbosity: minimal
-after_build:
-- cmd: nuget pack ./src/MiniProfiler.Elasticsearch/MiniProfiler.Elasticsearch.nuspec
+  publish_nuget: true
 artifacts:
 - path: '*.nupkg'
+  name: nuget
+- path: '*.snupkg'
   name: nuget
 deploy:
 - provider: NuGet
