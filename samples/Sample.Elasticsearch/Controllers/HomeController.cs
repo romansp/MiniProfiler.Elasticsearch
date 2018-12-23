@@ -29,20 +29,20 @@
                 Lastname = "Laarman"
             };
 
-            _client.Index(person);
+            _client.IndexDocument(person);
             _client.IndexMany(new List<Person> { person, person, person });
             _client.Get<Person>("1");
             _client.DeleteIndex("not-existing-index");
             _client.ClusterHealth();
 
-            using (MiniProfiler.StepStatic("Async"))
+            using (MiniProfiler.Current.Step("Async"))
             {
-                await _client.IndexAsync(person);
-                using (MiniProfiler.StepStatic("Async inner 1"))
+                await _client.IndexDocumentAsync(person);
+                using (MiniProfiler.Current.Step("Async inner 1"))
                 {
-                    await _client.IndexAsync(new List<Person> { person, person, person });
+                    await _client.IndexDocumentAsync(new List<Person> { person, person, person });
                 }
-                using (MiniProfiler.StepStatic("Async inner 2"))
+                using (MiniProfiler.Current.Step("Async inner 2"))
                 {
                     await _client.IndexManyAsync(new List<Person> { person, person, person });
                     await _client.GetAsync<Person>("1");
