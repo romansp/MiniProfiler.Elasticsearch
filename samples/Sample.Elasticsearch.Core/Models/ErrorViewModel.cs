@@ -1,6 +1,4 @@
-using System;
-
-namespace Sample.Elasticsearch.Core.Models {
+﻿namespace Sample.Elasticsearch.Core.Models {
     public class ErrorViewModel {
         public string RequestId { get; set; }
 

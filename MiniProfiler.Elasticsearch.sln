@@ -9,6 +9,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Elasticsearch", "sam
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "global", "global", "{8991B302-DBA8-4CF8-88D2-5B276C9B37CB}"
 	ProjectSection(SolutionItems) = preProject
+		.editorconfig = .editorconfig
 		.gitattributes = .gitattributes
 		.gitignore = .gitignore
 		appveyor.yml = appveyor.yml
@@ -24,7 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{16FF3561-A01
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{F57D62CB-485F-4E7A-9A23-8165941D5F41}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Elasticsearch.Core", "samples\Sample.Elasticsearch.Core\Sample.Elasticsearch.Core.csproj", "{275500BB-7676-4B66-93E3-422EF42A4678}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.Elasticsearch.Core", "samples\Sample.Elasticsearch.Core\Sample.Elasticsearch.Core.csproj", "{275500BB-7676-4B66-93E3-422EF42A4678}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

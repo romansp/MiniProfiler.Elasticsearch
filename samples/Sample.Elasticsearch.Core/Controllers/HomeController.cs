@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Diagnostics;
-using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Nest;
@@ -42,12 +41,12 @@ namespace Sample.Elasticsearch.Core.Controllers {
             _client.DeleteIndex("not-existing-index");
             _client.ClusterHealth();
 
-            using(MiniProfiler.Current.Step("Async")) {
+            using (MiniProfiler.Current.Step("Async")) {
                 await _client.IndexDocumentAsync(person);
-                using(MiniProfiler.Current.Step("Async inner 1")) {
+                using (MiniProfiler.Current.Step("Async inner 1")) {
                     await _client.IndexDocumentAsync(new List<Person> { person, person, person });
                 }
-                using(MiniProfiler.Current.Step("Async inner 2")) {
+                using (MiniProfiler.Current.Step("Async inner 2")) {
                     await _client.IndexManyAsync(new List<Person> { person, person, person });
                     await _client.GetAsync<Person>("1");
                 }
