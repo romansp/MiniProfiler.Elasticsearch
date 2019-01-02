@@ -7,7 +7,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     
     <PackageId>$(AssemblyName)</PackageId>
-    <PackageTags>Profiler;Elasticsearch;ASP.NET;Performance;Profiling;Timing</PackageTags>
+    <PackageTags>MiniProfiler;Elasticsearch;ASP.NET;Core;Profiler;Performance</PackageTags>
     <PackageProjectUrl>https://github.com/romansp/MiniProfiler.Elasticsearch</PackageProjectUrl>
     <PackageLicenseUrl>https://github.com/romansp/MiniProfiler.Elasticsearch/blob/master/LICENSE.md</PackageLicenseUrl>
     <PackageReleaseNotes>See https://github.com/romansp/MiniProfiler.Elasticsearch/releases for more info</PackageReleaseNotes>
