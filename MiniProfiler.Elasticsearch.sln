@@ -24,6 +24,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{16FF3561-A01
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{F57D62CB-485F-4E7A-9A23-8165941D5F41}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Elasticsearch.Core", "samples\Sample.Elasticsearch.Core\Sample.Elasticsearch.Core.csproj", "{275500BB-7676-4B66-93E3-422EF42A4678}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -38,6 +40,10 @@ Global
 		{E42FEBD8-F894-4572-AB40-4F78AA491179}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E42FEBD8-F894-4572-AB40-4F78AA491179}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E42FEBD8-F894-4572-AB40-4F78AA491179}.Release|Any CPU.Build.0 = Release|Any CPU
+		{275500BB-7676-4B66-93E3-422EF42A4678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{275500BB-7676-4B66-93E3-422EF42A4678}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{275500BB-7676-4B66-93E3-422EF42A4678}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{275500BB-7676-4B66-93E3-422EF42A4678}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -45,6 +51,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{618356CB-5D70-48F3-8B1B-6DA56120E3AC} = {16FF3561-A014-426A-8B77-4F3AF9F7E1A3}
 		{E42FEBD8-F894-4572-AB40-4F78AA491179} = {F57D62CB-485F-4E7A-9A23-8165941D5F41}
+		{275500BB-7676-4B66-93E3-422EF42A4678} = {F57D62CB-485F-4E7A-9A23-8165941D5F41}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E2F4A7BB-99F3-47A6-A169-C59AEFD8221D}
