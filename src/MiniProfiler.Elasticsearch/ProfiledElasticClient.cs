@@ -6,8 +6,6 @@
     /// Profiled version of <see cref="ElasticClient"/>. Handles responses and pushes data to current <see cref="MiniProfiler"/>'s session.
     /// </summary>
     public class ProfiledElasticClient : ElasticClient {
-        private readonly MiniProfiler _profiler = MiniProfiler.Current;
-
         /// <summary>
         /// Provides base <see cref="ElasticClient"/> with profiling features to current <see cref="MiniProfiler"/> session.
         /// </summary>
@@ -16,7 +14,7 @@
             : base(configuration) {
             ProfilerUtils.ExcludeElasticsearchAssemblies();
             ProfilerUtils.ApplyConfigurationSettings(configuration);
-            configuration.OnRequestCompleted(apiCallDetails => MiniProfilerElasticsearch.HandleResponse(apiCallDetails, _profiler));
+            configuration.OnRequestCompleted(apiCallDetails => MiniProfilerElasticsearch.HandleResponse(apiCallDetails));
         }
     }
 }
