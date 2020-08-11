@@ -20,4 +20,4 @@ PM> Install-Package MiniProfiler.Elasticsearch
 ## Usage
 Update usages of ``ElasticClient`` or ``ElasticsearchClient`` with their respected profiled version ``ProfiledElasticClient`` or ``ProfiledElasticsearchClient``.
 
-Reference [Sample.Elasticsearch](https://github.com/romansp/MiniProfiler.Elasticsearch/tree/master/samples/Sample.Elasticsearch) for working example.
+Reference [Sample.Elasticsearch.Core](https://github.com/romansp/MiniProfiler.Elasticsearch/tree/master/samples/Sample.Elasticsearch.Core) for working example.
