@@ -5,6 +5,8 @@
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Description>Elasticsearch.Net and NEST client for logging to MiniProfiler.</Description>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
   </PropertyGroup>
 
   <ItemGroup>

@@ -12,14 +12,18 @@
         /// Handles <see cref="IApiCallDetails"/> and pushes <see cref="CustomTiming"/> to current <see cref="MiniProfiler"/> session.
         /// </summary>
         /// <param name="apiCallDetails"><see cref="IApiCallDetails"/> to be handled.</param>
-        internal static void HandleResponse(IApiCallDetails apiCallDetails) {
+        internal static void HandleResponse(IApiCallDetails? apiCallDetails) {
+            if (apiCallDetails is null) {
+                throw new ArgumentNullException(nameof(apiCallDetails));
+            }
+
             var profiler = MiniProfiler.Current;
             if (profiler == null || profiler.Head == null || apiCallDetails.DebugInformation == null) {
                 return;
             }
 
             profiler.Head.AddCustomTiming("elasticsearch", new CustomTiming(profiler, apiCallDetails.DebugInformation) {
-                DurationMilliseconds = (decimal?)apiCallDetails?.AuditTrail?.Sum(c => (c.Ended - c.Started).TotalMilliseconds),
+                DurationMilliseconds = (decimal?)apiCallDetails.AuditTrail?.Sum(c => (c.Ended - c.Started).TotalMilliseconds),
                 ExecuteType = apiCallDetails.HttpMethod.GetStringValue(),
             });
         }
