@@ -35,8 +35,8 @@ namespace Sample.Elasticsearch.Core.Controllers {
             _client.IndexDocument(person);
             _client.IndexMany(new List<Person> { person, person, person });
             _client.Get<Person>("1");
-            _client.DeleteIndex("not-existing-index");
-            _client.ClusterHealth();
+            _client.Indices.Delete("not-existing-index");
+            _client.Cluster.Health();
 
             using (MiniProfiler.Current.Step("Async")) {
                 await _client.IndexDocumentAsync(person);
