@@ -5,26 +5,19 @@
     <OutputType>Library</OutputType>
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    
     <PackageId>$(AssemblyName)</PackageId>
     <PackageTags>MiniProfiler;Elasticsearch;ASP.NET;Core;Profiler;Performance</PackageTags>
-    <PackageProjectUrl>https://github.com/romansp/MiniProfiler.Elasticsearch</PackageProjectUrl>
-    <PackageLicenseUrl>https://github.com/romansp/MiniProfiler.Elasticsearch/blob/master/LICENSE.md</PackageLicenseUrl>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReleaseNotes>See https://github.com/romansp/MiniProfiler.Elasticsearch/releases for more info</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 
     <Authors>Roman Pavlov</Authors>
 
-    <RepositoryUrl>https://github.com/romansp/MiniProfiler.Elasticsearch.git</RepositoryUrl>
-    <RepositoryType>git</RepositoryType>
-    <RepositoryBranch>master</RepositoryBranch>
-
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
     <PublishRepositoryUrl>true</PublishRepositoryUrl>
+    <ContinuousIntegrationBuild>true</ContinuousIntegrationBuild>
+    <EmbedUntrackedSources>true</EmbedUntrackedSources>
   </PropertyGroup>
-  
-  <ItemGroup>
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.0.0-beta2-18618-05" PrivateAssets="All"/>
-  </ItemGroup>
+
 </Project>
