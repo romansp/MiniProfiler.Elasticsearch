@@ -6,17 +6,14 @@ using Microsoft.AspNetCore.Mvc;
 using Nest;
 using Sample.Elasticsearch.Core.Models;
 using StackExchange.Profiling;
-using StackExchange.Profiling.Elasticsearch;
 
 namespace Sample.Elasticsearch.Core.Controllers {
     public class HomeController : Controller {
 
-        private readonly ProfiledElasticClient _client;
+        private readonly IElasticClient _client;
 
-        public HomeController() {
-            var node = new Uri("http://localhost:9200");
-            var connectionSettings = new ConnectionSettings(node).DefaultIndex("elasticsearch-sample");
-            _client = new ProfiledElasticClient(connectionSettings);
+        public HomeController(IElasticClient client) {
+            _client = client;
         }
 
         public IActionResult Privacy() {
