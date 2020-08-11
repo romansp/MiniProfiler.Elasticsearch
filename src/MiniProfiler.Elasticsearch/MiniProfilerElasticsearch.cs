@@ -20,7 +20,7 @@
 
             profiler.Head.AddCustomTiming("elasticsearch", new CustomTiming(profiler, apiCallDetails.DebugInformation) {
                 DurationMilliseconds = (decimal?)apiCallDetails?.AuditTrail?.Sum(c => (c.Ended - c.Started).TotalMilliseconds),
-                ExecuteType = apiCallDetails.HttpMethod.ToString(),
+                ExecuteType = apiCallDetails.HttpMethod.GetStringValue(),
             });
         }
     }
