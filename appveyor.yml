@@ -17,9 +17,9 @@ build:
   publish_nuget_symbols: true
   use_snupkg_format: true
 artifacts:
-- path: '*.nupkg'
+- path: /src/**/*.nupkg
   name: nuget
-- path: '*.snupkg'
+- path: /src/**/*.nupkg
   name: nuget
 deploy:
 - provider: NuGet
