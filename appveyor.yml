@@ -1,4 +1,4 @@
-image: Visual Studio 2017
+image: Visual Studio 2019
 version: '{build}'
 pull_requests:
   do_not_increment_build_number: true
@@ -14,6 +14,8 @@ build:
   project: MiniProfiler.Elasticsearch.sln
   verbosity: minimal
   publish_nuget: true
+  publish_nuget_symbols: true
+  use_snupkg_format: true
 artifacts:
 - path: '*.nupkg'
   name: nuget
