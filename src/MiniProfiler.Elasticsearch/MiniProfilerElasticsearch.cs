@@ -19,7 +19,6 @@
             }
 
             profiler.Head.AddCustomTiming("elasticsearch", new CustomTiming(profiler, apiCallDetails.DebugInformation) {
-                Id = Guid.NewGuid(),
                 DurationMilliseconds = (decimal?)apiCallDetails?.AuditTrail?.Sum(c => (c.Ended - c.Started).TotalMilliseconds),
                 ExecuteType = apiCallDetails.HttpMethod.ToString(),
             });
