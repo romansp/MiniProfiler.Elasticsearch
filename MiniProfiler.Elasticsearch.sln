@@ -29,6 +29,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C0A0C99B
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniProfiler.Elasticsearch.Tests", "tests\MiniProfiler.Elasticsearch.Tests\MiniProfiler.Elasticsearch.Tests.csproj", "{2CD0A79C-D950-44AE-BBEA-ACCD50BEF00E}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".github", ".github", "{0A8BCF98-DC77-4CE9-B60B-3760D80E2955}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "workflow", "workflow", "{9E21EF9A-AF27-4ACB-8A0D-747D62A194E4}"
+	ProjectSection(SolutionItems) = preProject
+		.github\workflow\dotnet.yml = .github\workflow\dotnet.yml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,6 +62,7 @@ Global
 		{618356CB-5D70-48F3-8B1B-6DA56120E3AC} = {16FF3561-A014-426A-8B77-4F3AF9F7E1A3}
 		{275500BB-7676-4B66-93E3-422EF42A4678} = {F57D62CB-485F-4E7A-9A23-8165941D5F41}
 		{2CD0A79C-D950-44AE-BBEA-ACCD50BEF00E} = {C0A0C99B-744D-4C56-A53E-E22C51137ADF}
+		{9E21EF9A-AF27-4ACB-8A0D-747D62A194E4} = {0A8BCF98-DC77-4CE9-B60B-3760D80E2955}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E2F4A7BB-99F3-47A6-A169-C59AEFD8221D}
