@@ -1,11 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26228.9
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31019.35
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniProfiler.Elasticsearch", "src\MiniProfiler.Elasticsearch\MiniProfiler.Elasticsearch.csproj", "{618356CB-5D70-48F3-8B1B-6DA56120E3AC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Sample.Elasticsearch", "samples\Sample.Elasticsearch\Sample.Elasticsearch.csproj", "{E42FEBD8-F894-4572-AB40-4F78AA491179}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "global", "global", "{8991B302-DBA8-4CF8-88D2-5B276C9B37CB}"
 	ProjectSection(SolutionItems) = preProject
@@ -27,6 +25,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "samples", "samples", "{F57D
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample.Elasticsearch.Core", "samples\Sample.Elasticsearch.Core\Sample.Elasticsearch.Core.csproj", "{275500BB-7676-4B66-93E3-422EF42A4678}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{C0A0C99B-744D-4C56-A53E-E22C51137ADF}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MiniProfiler.Elasticsearch.Tests", "tests\MiniProfiler.Elasticsearch.Tests\MiniProfiler.Elasticsearch.Tests.csproj", "{2CD0A79C-D950-44AE-BBEA-ACCD50BEF00E}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -37,22 +39,22 @@ Global
 		{618356CB-5D70-48F3-8B1B-6DA56120E3AC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{618356CB-5D70-48F3-8B1B-6DA56120E3AC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{618356CB-5D70-48F3-8B1B-6DA56120E3AC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{E42FEBD8-F894-4572-AB40-4F78AA491179}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{E42FEBD8-F894-4572-AB40-4F78AA491179}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{E42FEBD8-F894-4572-AB40-4F78AA491179}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{E42FEBD8-F894-4572-AB40-4F78AA491179}.Release|Any CPU.Build.0 = Release|Any CPU
 		{275500BB-7676-4B66-93E3-422EF42A4678}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{275500BB-7676-4B66-93E3-422EF42A4678}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{275500BB-7676-4B66-93E3-422EF42A4678}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{275500BB-7676-4B66-93E3-422EF42A4678}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2CD0A79C-D950-44AE-BBEA-ACCD50BEF00E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2CD0A79C-D950-44AE-BBEA-ACCD50BEF00E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2CD0A79C-D950-44AE-BBEA-ACCD50BEF00E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2CD0A79C-D950-44AE-BBEA-ACCD50BEF00E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{618356CB-5D70-48F3-8B1B-6DA56120E3AC} = {16FF3561-A014-426A-8B77-4F3AF9F7E1A3}
-		{E42FEBD8-F894-4572-AB40-4F78AA491179} = {F57D62CB-485F-4E7A-9A23-8165941D5F41}
 		{275500BB-7676-4B66-93E3-422EF42A4678} = {F57D62CB-485F-4E7A-9A23-8165941D5F41}
+		{2CD0A79C-D950-44AE-BBEA-ACCD50BEF00E} = {C0A0C99B-744D-4C56-A53E-E22C51137ADF}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E2F4A7BB-99F3-47A6-A169-C59AEFD8221D}

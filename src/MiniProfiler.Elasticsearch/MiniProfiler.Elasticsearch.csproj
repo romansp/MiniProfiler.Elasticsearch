@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
     <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Description>Elasticsearch.Net and NEST client for logging to MiniProfiler.</Description>
@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="MiniProfiler.Shared" Version="4.*" />
-    <PackageReference Include="NEST" Version="6.4.1" />
+    <PackageReference Include="NEST" Version="7.11.1" />
   </ItemGroup>
 
   <ItemGroup>
