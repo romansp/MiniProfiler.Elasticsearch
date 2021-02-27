@@ -6,7 +6,7 @@ using Xunit;
 using StackExchangeMiniProfiler = StackExchange.Profiling.MiniProfiler;
 
 namespace MiniProfiler.Elasticsearch.Tests {
-    public class ProfiledElasticsearchClientTests {
+    public class ProfiledElasticLowLevelClientTests {
         [Fact]
         public async Task IndexDocument_WithProfiledClient_ProfilerIncludesTimings() {
             // Arrange
@@ -14,7 +14,7 @@ namespace MiniProfiler.Elasticsearch.Tests {
             var settings = new ConnectionConfiguration(connectionPool, new InMemoryConnection());
 
             var profiler = StackExchangeMiniProfiler.StartNew();
-            var client = new ProfiledElasticsearchClient(settings);
+            var client = new ProfiledElasticLowLevelClient(settings);
             var person = new { Id = "1" };
 
             // Act
