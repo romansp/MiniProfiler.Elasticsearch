@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Nest;
+using StackExchange.Profiling;
 using StackExchange.Profiling.Elasticsearch;
 
 namespace Sample.Elasticsearch.Core {
@@ -16,11 +17,15 @@ namespace Sample.Elasticsearch.Core {
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services) {
             services.AddControllersWithViews();
-            services.AddMiniProfiler();
+            services.AddMiniProfiler(options => options.AddElastic());
+            //services.AddMiniProfiler();
             services.AddSingleton<IElasticClient>(x => {
                 var node = new Uri("http://localhost:9200");
                 var connectionSettings = new ConnectionSettings(node).DefaultIndex("elasticsearch-sample");
-                return new ProfiledElasticClient(connectionSettings);
+                connectionSettings.DisableDirectStreaming();
+                //connectionSettings.DisableDirectStreaming();
+                //return new ProfiledElasticClient(connectionSettings);
+                return new ElasticClient(connectionSettings);
             });
         }
 
