@@ -5,10 +5,9 @@
     using System.Diagnostics;
     using global::Elasticsearch.Net;
     using global::Elasticsearch.Net.Diagnostics;
-    using StackExchange.Profiling.Internal;
 
     /// <summary>
-    /// Diagnostic listener for Elasticsearch.Net events.
+    /// Diagnostic listener for NEST and Elasticsearch.Net events.
     /// </summary>
     public class ElasticDiagnosticListener : IObserver<DiagnosticListener>, IDisposable {
         private bool disposedValue;
@@ -28,27 +27,27 @@
 
         /// <inheritdoc />
         public void OnNext(DiagnosticListener value) {
-            TrySubscribe(DiagnosticSources.AuditTrailEvents.SourceName,
-                () => new AuditDiagnosticObserver(v => WriteToProfiler(v.Key, v.Value)), value);
-
-            TrySubscribe(DiagnosticSources.Serializer.SourceName,
-                () => new SerializerDiagnosticObserver(v => WriteToProfiler(v.Key, v.Value)), value);
-
             TrySubscribe(DiagnosticSources.RequestPipeline.SourceName,
                 () => new RequestPipelineDiagnosticObserver(
                     v => WriteToProfiler(v.Key, v.Value),
                     v => WriteToProfiler(v.Key, v.Value)
                 ), value);
 
-            TrySubscribe(DiagnosticSources.HttpConnection.SourceName,
-                () => new HttpConnectionDiagnosticObserver(
-                    v => WriteToProfiler(v.Key, v.Value),
-                    v => WriteToProfiler(v.Key, v.Value)
-                ), value);
-        }
+            //TrySubscribe(DiagnosticSources.AuditTrailEvents.SourceName,
+            //    () => new AuditDiagnosticObserver(
+            //        v => WriteToProfiler(v.Key, v.Value)
+            //    ), value);
 
-        public void OnNext(KeyValuePair<string, object> value) {
-            throw new NotImplementedException();
+            //TrySubscribe(DiagnosticSources.Serializer.SourceName,
+            //    () => new SerializerDiagnosticObserver(
+            //        v => WriteToProfiler(v.Key, v.Value)
+            //    ), value);
+
+            //TrySubscribe(DiagnosticSources.HttpConnection.SourceName,
+            //    () => new HttpConnectionDiagnosticObserver(
+            //        v => WriteToProfiler(v.Key, v.Value),
+            //        v => WriteToProfiler(v.Key, v.Value)
+            //    ), value);
         }
 
         /// <inheritdoc />
@@ -67,7 +66,6 @@
         /// <inheritdoc />
         public void Dispose() {
             Dispose(disposing: true);
-            GC.SuppressFinalize(this);
         }
 
         private void TrySubscribe(string sourceName, Func<IObserver<KeyValuePair<string, object?>>> listener, DiagnosticListener value) {
@@ -81,21 +79,8 @@
             MiniProfilerElasticsearch.HandleResponse(data);
         }
 
-        private static void WriteToProfiler(string eventName, Audit data) {
-            var profiler = MiniProfiler.Current;
-            if (profiler is null) return;
-
-            profiler.Head.AddCustomTiming("elasticsearch", new CustomTiming(profiler, data.Path) {
-                DurationMilliseconds = (decimal?)(data.Ended - data.Started).TotalMilliseconds,
-                ExecuteType = data.Event.GetStringValue(),
-            });
-        }
-
-        private static void WriteToProfiler<T>(string eventName, T data) {
-            var profiler = MiniProfiler.Current;
-            if (profiler is null) return;
-
-            //MiniProfilerElasticsearch.HandleResponse()
+        private static void WriteToProfiler(string eventName, RequestData data) {
+            // skip these events
         }
     }
 }
