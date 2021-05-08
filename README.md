@@ -18,6 +18,6 @@ PM> Install-Package MiniProfiler.Elasticsearch
 | `6.x` | `6.x` | `4.x` | [![Build status](https://ci.appveyor.com/api/projects/status/m15gemuqkcs1rbv4/branch/master?svg=true)](https://ci.appveyor.com/project/romansp/miniprofiler-elasticsearch/branch/master) | [![Nuget feed](https://img.shields.io/nuget/vpre/MiniProfiler.Elasticsearch.svg)](https://www.nuget.org/packages/MiniProfiler.Elasticsearch)
 
 ## Usage
-Update usages of ``ElasticClient`` or ``ElasticsearchClient`` with their respected profiled version ``ProfiledElasticClient`` or ``ProfiledElasticsearchClient``.
+Update usages of ``ElasticClient`` or ``ElasticLowLevelClient`` with their respected profiled version ``ProfiledElasticClient`` or ``ProfiledElasticLowLevelClient``.
 
 Reference [Sample.Elasticsearch.Core](https://github.com/romansp/MiniProfiler.Elasticsearch/tree/master/samples/Sample.Elasticsearch.Core) for working example.

@@ -10,9 +10,8 @@
         /// Provides base <see cref="ElasticClient"/> with profiling features to current <see cref="MiniProfiler"/> session.
         /// </summary>
         /// <param name="configuration">Instance of <see cref="ConnectionSettings"/>. Its responses will be handled and pushed to <see cref="MiniProfiler"/></param>
-        public ProfiledElasticClient(ConnectionSettings configuration)
-            : base(configuration) {
-            ProfilerUtils.ExcludeElasticsearchAssemblies();
+        public ProfiledElasticClient(ConnectionSettings configuration) : base(configuration) {
+            ProfilerUtils.ExcludeElasticAssemblies();
             ProfilerUtils.ApplyConfigurationSettings(configuration);
             configuration.OnRequestCompleted(apiCallDetails => MiniProfilerElasticsearch.HandleResponse(apiCallDetails));
         }
