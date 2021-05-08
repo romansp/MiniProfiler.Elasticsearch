@@ -1,12 +1,12 @@
 <Project>
   <PropertyGroup>
-    <VersionPrefix>6.1.1</VersionPrefix>
+    <VersionPrefix>7.0</VersionPrefix>
 
     <OutputType>Library</OutputType>
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <PackageId>$(AssemblyName)</PackageId>
-    <PackageTags>MiniProfiler;Elasticsearch;ASP.NET;Core;Profiler;Performance</PackageTags>
+    <PackageTags>MiniProfiler;Elastic;Elasticsearch;ASP.NET;Core;Profiler;Performance</PackageTags>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <PackageReleaseNotes>See https://github.com/romansp/MiniProfiler.Elasticsearch/releases for more info</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
