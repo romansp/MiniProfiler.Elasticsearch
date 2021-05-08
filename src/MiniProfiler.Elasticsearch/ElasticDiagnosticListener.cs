@@ -52,6 +52,17 @@
         }
 
         /// <inheritdoc />
+        public void OnNext(KeyValuePair<string, object> diagnosticEvent) {
+            var eventName = diagnosticEvent.Key;
+            var data = diagnosticEvent.Value;
+            switch (data) {
+                case IApiCallDetails apiCallDetails:
+                    WriteToProfiler(eventName, apiCallDetails);
+                    break;
+            }
+        }
+
+        /// <inheritdoc />
         protected virtual void Dispose(bool disposing) {
             if (!disposedValue) {
                 if (disposing) {
@@ -82,16 +93,6 @@
 
         private static void WriteToProfiler(string eventName, RequestData data) {
             // skip these events
-        }
-
-        public void OnNext(KeyValuePair<string, object> diagnosticEvent) {
-            var eventName = diagnosticEvent.Key;
-            var data = diagnosticEvent.Value;
-            switch(data) {
-                case IApiCallDetails apiCallDetails:
-                    WriteToProfiler(eventName, apiCallDetails);
-                    break;
-            }
         }
     }
 }
