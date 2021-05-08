@@ -15,15 +15,6 @@
         };
 
         /// <summary>
-        /// Enabling configuration settings prior to receive internal API call timings.
-        /// </summary>
-        /// <typeparam name="T"></typeparam>
-        /// <param name="configuration"></param>
-        internal static void ApplyConfigurationSettings<T>(ConnectionConfiguration<T> configuration) where T : ConnectionConfiguration<T> {
-            configuration.DisableDirectStreaming();
-        }
-
-        /// <summary>
         /// Excludes Elastic assemblies from passed in <paramref name="options"/>, so they won't be included into <see cref="MiniProfiler"/> timings' call-stack.
         /// </summary>
         /// <param name="options"></param>
