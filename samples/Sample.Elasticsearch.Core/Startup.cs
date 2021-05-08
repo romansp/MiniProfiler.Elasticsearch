@@ -5,7 +5,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Nest;
-using StackExchange.Profiling;
 
 namespace Sample.Elasticsearch.Core {
     public class Startup {
@@ -18,7 +17,7 @@ namespace Sample.Elasticsearch.Core {
             services.AddControllersWithViews();
 
             // use AddElastic or wrap ElasticClient instance in ProfiledElasticClient
-            services.AddMiniProfiler(options => options.AddElastic());
+            services.AddMiniProfiler().AddElastic();
             services.AddSingleton<IElasticClient>(x => {
                 var node = new Uri("http://localhost:9200");
                 var connectionSettings = new ConnectionSettings(node).DefaultIndex("elasticsearch-sample");

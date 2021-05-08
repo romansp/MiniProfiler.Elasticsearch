@@ -1,6 +1,5 @@
 ﻿namespace StackExchange.Profiling.Elasticsearch.Utils {
     using System.Collections.Generic;
-    using global::Elasticsearch.Net;
     using StackExchange.Profiling.Internal;
 
     internal static class ProfilerUtils {

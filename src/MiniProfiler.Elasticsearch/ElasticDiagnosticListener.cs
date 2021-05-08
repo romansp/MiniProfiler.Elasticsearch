@@ -5,11 +5,12 @@
     using System.Diagnostics;
     using global::Elasticsearch.Net;
     using global::Elasticsearch.Net.Diagnostics;
+    using StackExchange.Profiling.Internal;
 
     /// <summary>
     /// Diagnostic listener for NEST and Elasticsearch.Net events.
     /// </summary>
-    public class ElasticDiagnosticListener : IObserver<DiagnosticListener>, IDisposable {
+    public class ElasticDiagnosticListener : IObserver<DiagnosticListener>, IMiniProfilerDiagnosticListener, IDisposable {
         private bool disposedValue;
         private ConcurrentBag<IDisposable> Disposables { get; } = new ConcurrentBag<IDisposable>();
 
@@ -81,6 +82,16 @@
 
         private static void WriteToProfiler(string eventName, RequestData data) {
             // skip these events
+        }
+
+        public void OnNext(KeyValuePair<string, object> diagnosticEvent) {
+            var eventName = diagnosticEvent.Key;
+            var data = diagnosticEvent.Value;
+            switch(data) {
+                case IApiCallDetails apiCallDetails:
+                    WriteToProfiler(eventName, apiCallDetails);
+                    break;
+            }
         }
     }
 }

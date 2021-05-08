@@ -1,10 +1,9 @@
-﻿using System;
-using System.Diagnostics;
-using StackExchange.Profiling.Elasticsearch;
-using StackExchange.Profiling.Elasticsearch.Utils;
-using StackExchange.Profiling.Internal;
-
-namespace StackExchange.Profiling {
+﻿namespace StackExchange.Profiling {
+    using System;
+    using System.Diagnostics;
+    using StackExchange.Profiling.Elasticsearch;
+    using StackExchange.Profiling.Elasticsearch.Utils;
+    using StackExchange.Profiling.Internal;
 
     /// <summary>
     /// Extension methods for the MiniProfiler.Elasticsearch.
