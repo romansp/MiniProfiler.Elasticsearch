@@ -7,71 +7,71 @@ using StackExchange.Profiling.Elasticsearch;
 using Xunit;
 using StackExchangeMiniProfiler = StackExchange.Profiling.MiniProfiler;
 
-namespace MiniProfiler.Elasticsearch.Tests {
-    public class ElasticClientTests {
-        [Fact]
-        public async Task DiagnosticListener_IndexDocument_ProfilerIncludesTimings() {
-            // Arrange
-            using var listener = new ElasticDiagnosticListener();
-            using var foo = DiagnosticListener.AllListeners.Subscribe(listener);
-            var connectionPool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
-            var settings = new ConnectionSettings(connectionPool, new InMemoryConnection())
-                .DefaultIndex("test-index");
+namespace MiniProfiler.Elasticsearch.Tests;
 
-            var profiler = StackExchangeMiniProfiler.StartNew();
-            var client = new ElasticClient(settings);
-            var person = new { Id = "1" };
+public class ElasticClientTests {
+    [Fact]
+    public async Task DiagnosticListener_IndexDocument_ProfilerIncludesTimings() {
+        // Arrange
+        using var listener = new ElasticDiagnosticListener();
+        using var foo = DiagnosticListener.AllListeners.Subscribe(listener);
+        var connectionPool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
+        var settings = new ConnectionSettings(connectionPool, new InMemoryConnection())
+            .DefaultIndex("test-index");
 
-            // Act
-            await client.IndexDocumentAsync(person);
+        var profiler = StackExchangeMiniProfiler.StartNew();
+        var client = new ElasticClient(settings);
+        var person = new { Id = "1" };
 
-            // Assert
-            AssertTimings(profiler);
-        }
+        // Act
+        await client.IndexDocumentAsync(person);
 
-        [Fact]
-        public async Task ProfiledElasticClient_IndexDocument_ProfilerIncludesTimings() {
-            // Arrange
-            var connectionPool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
-            var settings = new ConnectionSettings(connectionPool, new InMemoryConnection())
-                .DefaultIndex("test-index");
+        // Assert
+        AssertTimings(profiler);
+    }
 
-            var profiler = StackExchangeMiniProfiler.StartNew();
-            var client = new ProfiledElasticClient(settings);
-            var person = new { Id = "1" };
+    [Fact]
+    public async Task ProfiledElasticClient_IndexDocument_ProfilerIncludesTimings() {
+        // Arrange
+        var connectionPool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
+        var settings = new ConnectionSettings(connectionPool, new InMemoryConnection())
+            .DefaultIndex("test-index");
 
-            // Act
-            await client.IndexDocumentAsync(person);
+        var profiler = StackExchangeMiniProfiler.StartNew();
+        var client = new ProfiledElasticClient(settings);
+        var person = new { Id = "1" };
 
-            // Assert
-            AssertTimings(profiler);
-        }
+        // Act
+        await client.IndexDocumentAsync(person);
 
-        [Fact]
-        public async Task ProfiledLowLevelClient_IndexDocument_ProfilerIncludesTimings() {
-            // Arrange
-            var connectionPool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
-            var settings = new ConnectionConfiguration(connectionPool, new InMemoryConnection());
+        // Assert
+        AssertTimings(profiler);
+    }
 
-            var profiler = StackExchangeMiniProfiler.StartNew();
-            var client = new ProfiledElasticLowLevelClient(settings);
-            var person = new { Id = "1" };
+    [Fact]
+    public async Task ProfiledLowLevelClient_IndexDocument_ProfilerIncludesTimings() {
+        // Arrange
+        var connectionPool = new SingleNodeConnectionPool(new Uri("http://localhost:9200"));
+        var settings = new ConnectionConfiguration(connectionPool, new InMemoryConnection());
 
-            // Act
-            await client.IndexAsync<BytesResponse>("test-index", PostData.Serializable(person));
+        var profiler = StackExchangeMiniProfiler.StartNew();
+        var client = new ProfiledElasticLowLevelClient(settings);
+        var person = new { Id = "1" };
 
-            // Assert
-            AssertTimings(profiler);
-        }
+        // Act
+        await client.IndexAsync<BytesResponse>("test-index", PostData.Serializable(person));
 
-        private static void AssertTimings(StackExchangeMiniProfiler profiler) {
-            var customTimings = profiler.Root.CustomTimings;
-            Assert.NotEmpty(customTimings);
-            Assert.True(customTimings.TryGetValue("elasticsearch", out var elasticTimings));
-            Assert.NotEmpty(elasticTimings);
-            Assert.Collection(elasticTimings, timing => {
-                Assert.True(timing.DurationMilliseconds > 0);
-            });
-        }
+        // Assert
+        AssertTimings(profiler);
+    }
+
+    private static void AssertTimings(StackExchangeMiniProfiler profiler) {
+        var customTimings = profiler.Root.CustomTimings;
+        Assert.NotEmpty(customTimings);
+        Assert.True(customTimings.TryGetValue("elasticsearch", out var elasticTimings));
+        Assert.NotEmpty(elasticTimings);
+        Assert.Collection(elasticTimings, timing => {
+            Assert.True(timing.DurationMilliseconds > 0);
+        });
     }
 }

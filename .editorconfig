@@ -86,6 +86,7 @@ csharp_style_deconstructed_variable_declaration = true:suggestion
 csharp_prefer_simple_default_expression = true:suggestion 
 csharp_style_pattern_local_over_anonymous_function = true:suggestion 
 csharp_style_inlined_variable_declaration = true:suggestion 
+csharp_style_namespace_declarations = file_scoped:warning
 ############################### 
 # C# Formatting Rules         # 
 ############################### 
@@ -116,6 +117,10 @@ csharp_space_between_method_call_empty_parameter_list_parentheses = false
 # Wrapping preferences 
 csharp_preserve_single_line_statements = true 
 csharp_preserve_single_line_blocks = true 
+
+# Roslynator
+dotnet_diagnosic.RCS1021.enabled = false
+
 ############################### 
 # VB Coding Conventions       # 
 ############################### 
