@@ -5,18 +5,19 @@
     <div class="text-center">
         <h1 class="display-4">Welcome</h1>
         <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-        <a href="#" id="ajax" class="btn btn-success btn-lg">Do ES Ajax call</a>
+        <button id="ajax" class="btn btn-success btn-lg">Do ES Ajax call</button>
     </div>
 
 @section scripts{
     <script>
-        $('#ajax').click(function() {
-            $.ajax('@Url.Action("Ajax")', {
-                cache: false,
-                data: {
+        document.getElementById("ajax").addEventListener("click", () => {
+            fetch('@Url.Action("Ajax")', {
+                method: "post",
+                cache: "no-cache",
+                body: JSON.stringify({
                     message: "Hello ajax!"
-                }
-            });
+                })
+            })
         });
     </script>
 }
