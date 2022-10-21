@@ -12,7 +12,7 @@
     <PackageReleaseNotes>See https://github.com/romansp/MiniProfiler.Elasticsearch/releases for more info</PackageReleaseNotes>
     <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
 
-    <Authors>Roman Pavlov</Authors>
+    <Authors>Raman Paulau</Authors>
 
     <IncludeSymbols>true</IncludeSymbols>
     <SymbolPackageFormat>snupkg</SymbolPackageFormat>
