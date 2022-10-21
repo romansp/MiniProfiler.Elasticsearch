@@ -24,4 +24,6 @@ jobs:
     - name: Pack
       run: dotnet pack src/MiniProfiler.Elasticsearch/MiniProfiler.Elasticsearch.csproj --configuration Release --include-symbols --no-build
     - name: Test
-      run: dotnet test --configuration Release --no-build
+      run: dotnet test --configuration Release --no-build /p:CollectCoverage=true /p:CoverletOutputFormat=opencover
+    - name: Coverage
+      uses: codecov/codecov-action@v3
