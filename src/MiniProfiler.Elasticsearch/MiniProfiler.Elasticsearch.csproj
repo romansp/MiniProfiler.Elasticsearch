@@ -8,14 +8,6 @@
     <IsPackable>true</IsPackable>
   </PropertyGroup>
 
-  <PropertyGroup>
-    <PackageReadmeFile>README.md</PackageReadmeFile>
-  </PropertyGroup>
-
-  <ItemGroup>
-    <None Include="../../README.md" Pack="true" PackagePath="\"/>
-  </ItemGroup>
-
   <ItemGroup>
     <PackageReference Include="MiniProfiler.Shared" Version="4.*" />
     <PackageReference Include="NEST" Version="7.12.1" />
