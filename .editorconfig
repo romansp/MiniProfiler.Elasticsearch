@@ -119,7 +119,7 @@ csharp_preserve_single_line_statements = true
 csharp_preserve_single_line_blocks = true 
 
 # Roslynator
-dotnet_diagnosic.RCS1021.severity = none
+dotnet_diagnostic.RCS1021.severity = none
 
 ############################### 
 # VB Coding Conventions       # 
