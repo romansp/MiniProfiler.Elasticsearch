@@ -22,6 +22,6 @@ jobs:
     - name: Build
       run: dotnet build --configuration Release --no-restore
     - name: Pack
-      run: dotnet pack --configuration Release --include-symbols
+      run: dotnet pack src/MiniProfiler.Elasticsearch/MiniProfiler.Elasticsearch.csproj --configuration Release --include-symbols --no-build
     - name: Test
-      run: dotnet test --configuration Release --no-build --verbosity normal
+      run: dotnet test --configuration Release --no-build
