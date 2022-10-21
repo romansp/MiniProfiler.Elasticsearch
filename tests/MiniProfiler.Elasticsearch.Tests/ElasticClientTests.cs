@@ -11,6 +11,25 @@ namespace MiniProfiler.Elasticsearch.Tests;
 
 public class ElasticClientTests {
     [Fact]
+    public async Task ElasticCallUnsuccessful_ProfilerTimingErrored() {
+        // Arrange
+        var connectionPool = new SingleNodeConnectionPool(new Uri("http://non-existing-host.non-existing-tld"));
+        var settings = new ConnectionSettings(connectionPool)
+            .DefaultIndex("test-index");
+
+        var profiler = StackExchangeMiniProfiler.StartNew();
+        var client = new ProfiledElasticClient(settings);
+        var person = new { Id = "1" };
+
+        // Act
+        await client.IndexDocumentAsync(person);
+
+        // Assert
+        profiler.Root.CustomTimings.TryGetValue("elasticsearch", out var elasticTimings);
+        Assert.True(elasticTimings![0].Errored);
+    }
+
+    [Fact]
     public async Task DiagnosticListener_IndexDocument_ProfilerIncludesTimings() {
         // Arrange
         using var listener = new ElasticDiagnosticListener();

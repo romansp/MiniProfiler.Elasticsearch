@@ -14,18 +14,17 @@ internal static class MiniProfilerElasticsearch {
     /// </summary>
     /// <param name="apiCallDetails"><see cref="IApiCallDetails"/> to be handled.</param>
     internal static void HandleResponse(IApiCallDetails? apiCallDetails) {
-        if (apiCallDetails is null) {
-            throw new ArgumentNullException(nameof(apiCallDetails));
-        }
+        _ = apiCallDetails ?? throw new ArgumentNullException(nameof(apiCallDetails));
 
         var profiler = MiniProfiler.Current;
-        if (profiler == null || profiler.Head == null || apiCallDetails.DebugInformation == null) {
+        if (profiler is null || profiler.Head is null || apiCallDetails.DebugInformation is null) {
             return;
         }
 
         profiler.Head.AddCustomTiming("elasticsearch", new CustomTiming(profiler, apiCallDetails.DebugInformation) {
             DurationMilliseconds = (decimal?)apiCallDetails.AuditTrail?.Sum(c => (c.Ended - c.Started).TotalMilliseconds),
-            ExecuteType = apiCallDetails.HttpMethod.GetStringValue(),
+            ExecuteType = apiCallDetails.HttpMethod.ToString(),
+            Errored = !apiCallDetails.Success
         });
     }
 }
