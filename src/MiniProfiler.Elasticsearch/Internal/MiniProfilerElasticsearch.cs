@@ -1,9 +1,8 @@
-﻿namespace StackExchange.Profiling.Elasticsearch;
-
-using System;
+﻿using System;
 using System.Linq;
-using global::Elasticsearch.Net;
-using Profiling;
+using Elasticsearch.Net;
+
+namespace StackExchange.Profiling.Elasticsearch.Internal;
 
 /// <summary>
 /// <see cref="IApiCallDetails"/> handler class.

@@ -1,7 +1,7 @@
-﻿namespace StackExchange.Profiling.Elasticsearch;
+﻿using Elasticsearch.Net;
+using StackExchange.Profiling.Elasticsearch.Internal;
 
-using global::Elasticsearch.Net;
-using Utils;
+namespace StackExchange.Profiling.Elasticsearch;
 
 /// <summary>
 /// Profiled version of <see cref="ElasticLowLevelClient"/>. Handles responses and pushes data to current <see cref="MiniProfiler"/>'s session.

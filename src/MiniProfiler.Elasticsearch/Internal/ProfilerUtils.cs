@@ -1,6 +1,7 @@
-﻿namespace StackExchange.Profiling.Elasticsearch.Utils;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using StackExchange.Profiling.Internal;
+
+namespace StackExchange.Profiling.Elasticsearch.Internal;
 
 internal static class ProfilerUtils {
     /// <summary>
@@ -8,6 +9,7 @@ internal static class ProfilerUtils {
     /// </summary>
     internal static HashSet<string> ExcludedAssemblies { get; } = new HashSet<string> {
         "Elasticsearch.Net",
+        "Elasticsearch.Net.Diagnostics",
         "Nest",
         typeof(MiniProfilerElasticsearch).Namespace,
         typeof(MiniProfilerElasticsearch).Assembly.GetName().Name,

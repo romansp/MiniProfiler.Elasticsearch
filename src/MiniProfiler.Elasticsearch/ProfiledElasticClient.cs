@@ -1,7 +1,7 @@
-﻿namespace StackExchange.Profiling.Elasticsearch;
+﻿using Nest;
+using StackExchange.Profiling.Elasticsearch.Internal;
 
-using Nest;
-using Utils;
+namespace StackExchange.Profiling.Elasticsearch;
 
 /// <summary>
 /// Profiled version of <see cref="ElasticClient"/>. Handles responses and pushes data to current <see cref="MiniProfiler"/>'s session.

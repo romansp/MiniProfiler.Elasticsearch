@@ -1,8 +1,8 @@
-﻿namespace Microsoft.Extensions.DependencyInjection;
-
-using System;
+﻿using System;
 using StackExchange.Profiling.Elasticsearch;
 using StackExchange.Profiling.Internal;
+
+namespace Microsoft.Extensions.DependencyInjection;
 
 /// <summary>
 /// Extension methods for the MiniProfiler.Elasticsearch.

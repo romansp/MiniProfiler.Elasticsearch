@@ -15,8 +15,10 @@ In your `Startup.cs`, call `AddElastic()`:
 ```c#
 public void ConfigureServices(IServiceCollection services)
 {
-    services.AddMiniProfiler()
-            .AddElastic();
+    services.AddMiniProfiler(options => {
+        options.ExcludeElasticAssemblies();
+    })
+    .AddElastic();
 }
 ```
 

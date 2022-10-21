@@ -1,11 +1,13 @@
-﻿namespace StackExchange.Profiling.Elasticsearch;
-using System;
+﻿using System;
 using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Diagnostics;
-using global::Elasticsearch.Net;
-using global::Elasticsearch.Net.Diagnostics;
+using Elasticsearch.Net;
+using Elasticsearch.Net.Diagnostics;
 using StackExchange.Profiling.Internal;
+using StackExchange.Profiling.Elasticsearch.Internal;
+
+namespace StackExchange.Profiling.Elasticsearch;
 
 /// <summary>
 /// Diagnostic listener for NEST and Elasticsearch.Net events.
