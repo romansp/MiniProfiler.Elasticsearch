@@ -1,4 +1,4 @@
-image: Visual Studio 2022
+image: Ubuntu
 version: '{build}'
 pull_requests:
   do_not_increment_build_number: true
