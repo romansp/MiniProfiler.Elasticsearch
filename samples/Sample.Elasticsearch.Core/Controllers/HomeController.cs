@@ -1,7 +1,5 @@
-﻿using System.Diagnostics;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Nest;
-using Sample.Elasticsearch.Core.Models;
 using StackExchange.Profiling;
 
 namespace Sample.Elasticsearch.Core.Controllers;
@@ -13,11 +11,6 @@ public class HomeController : Controller {
 
     public HomeController(IElasticClient client) {
         _client = client;
-    }
-
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-    public IActionResult Error() {
-        return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
     }
 
     public async Task<ActionResult> Index() {
@@ -43,19 +36,7 @@ public class HomeController : Controller {
         return View();
     }
 
-    public ActionResult About() {
-        ViewBag.Message = "Your application description page.";
-
-        return View();
-    }
-
-    public ActionResult Contact() {
-        ViewBag.Message = "Your contact page.";
-
-        return View();
-    }
-
-    public async Task<JsonResult> Ajax() {
+    public async Task<JsonResult> Json() {
         var result = _client.Get<Person>("1").Source;
         // execute duplicate async
         var resultAsync = (await _client.GetAsync<Person>("1")).Source;

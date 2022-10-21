@@ -3,19 +3,17 @@
 }
 
     <div class="text-center">
-        <h1 class="display-4">Welcome</h1>
-        <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-        <button id="ajax" class="btn btn-success btn-lg">Do ES Ajax call</button>
+        <button id="send-json" class="btn btn-success btn-lg">Send json request via 'fetch'</button>
     </div>
 
 @section scripts{
     <script>
-        document.getElementById("ajax").addEventListener("click", () => {
-            fetch('@Url.Action("Ajax")', {
+        document.getElementById("send-json").addEventListener("click", () => {
+            fetch('@Url.Action("Json")', {
                 method: "post",
                 cache: "no-cache",
                 body: JSON.stringify({
-                    message: "Hello ajax!"
+                    message: "Hello json!"
                 })
             })
         });
