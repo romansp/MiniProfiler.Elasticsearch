@@ -2,6 +2,7 @@
   <PropertyGroup>
     <VersionPrefix>7.0</VersionPrefix>
 
+    <Description>Elasticsearch.Net and NEST client for logging to MiniProfiler.</Description>
     <OutputType>Library</OutputType>
     <OutputPath>bin\$(Configuration)\</OutputPath>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
